@@ -14,12 +14,13 @@ jobs:
         id: make_diagram
         uses: githubocto/repo-visualizer@0.7.1
         with:
-          root_path: .
+          root_path: ./
           output_file: "output-diagram.svg"
           artifact_name: "my-diagram"
           should_push: "false"
       - name: Get artifact
         uses: actions/download-artifact@v2
         with:
+          root_path: ./
           name: "my-diagram"
-          path: "downloads"
+          path: "/downloads"
